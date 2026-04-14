@@ -14,3 +14,11 @@ Problem 2
     Because the circuit does not check if c is actually in the Merkle tree, 
     the proof does not confirm that the commitment is from a real deposit. 
     This breaks soundness and could let an attacker withdraw funds without ever making a deposit.
+
+5 Bonus: Deploying contract on-chain (4 points)
+Contract address: 0xA0A7f858A279474352e8C4b50e390AF44fd33CCa
+Deposit tx hash: 0x04394397c5d3376d4625de0e8f6ad250e8e6e27a865553399c45259614686911
+Withdraw tx hash: 0x7b6a7f9e0bbd78e3cd91bce4e37fc0dd06d6367e6cab6c1bd3201916168c98e3
+Modified deployment script to separate public inputs from proof:
+    Deposit (4 public inputs, skip 264 hex chars): echo "\"0x$(od -An -v -t x1 ./target/proof | tr -d ' \n' | sed 's/^.\{264\}//')\""
+    Withdraw (2 public inputs, skip 136 hex chars): echo "\"0x$(od -An -v -t x1 ./target/proof | tr -d ' \n' | sed 's/^.\{136\}//')\""
