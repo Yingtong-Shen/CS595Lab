@@ -1,0 +1,16 @@
+4 Written questions
+Problem 1
+    Stu’s scheme has a problem: if the Merkle path is made public, 
+    it shows exactly which leaf in the Merkle tree is used for the withdrawal. 
+    The withdrawal proof should not only confirm that a valid commitment exists in the tree, 
+    but also keep the withdrawer’s commitment hidden. 
+    Zero-knowledge proofs are meant to prove membership in the tree without revealing which commitment belongs to the withdrawer. 
+    If the path is public, anyone can link the withdrawal to a specific deposit, so the mixer loses its anonymity.
+
+Problem 2
+    The problem with this scheme is that it no longer proves membership in the Merkle tree. 
+    It only shows that the prover knows values id and r where PedersenHash(id, r) equals c. 
+    An attacker could pick any id and r, calculate a matching c, and create a valid proof. 
+    Because the circuit does not check if c is actually in the Merkle tree, 
+    the proof does not confirm that the commitment is from a real deposit. 
+    This breaks soundness and could let an attacker withdraw funds without ever making a deposit.
