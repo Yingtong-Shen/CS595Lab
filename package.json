@@ -1,0 +1,29 @@
+{
+  "name": "cs595lab",
+  "version": "1.0.0",
+  "description": "Hands‑on labs and homework assignments that teach modern zero‑knowledge proof engineering with **Noir**, **Barretenberg**, and **Solidity**—runnable in a single click via GitHub Codespaces or locally with Docker.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Yingtong-Shen/CS595Lab.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Yingtong-Shen/CS595Lab/issues"
+  },
+  "homepage": "https://github.com/Yingtong-Shen/CS595Lab#readme",
+  "devDependencies": {
+    "@types/node": "^25.6.0",
+    "tsx": "^4.21.0",
+    "typescript": "^6.0.2"
+  },
+  "dependencies": {
+    "@aztec/aztec.js": "^4.1.3",
+    "@aztec/bb.js": "^4.1.3"
+  }
+}
