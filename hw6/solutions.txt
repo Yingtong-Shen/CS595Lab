@@ -22,3 +22,15 @@ Withdraw tx hash: 0x7b6a7f9e0bbd78e3cd91bce4e37fc0dd06d6367e6cab6c1bd3201916168c
 Modified deployment script to separate public inputs from proof:
     Deposit (4 public inputs, skip 264 hex chars): echo "\"0x$(od -An -v -t x1 ./target/proof | tr -d ' \n' | sed 's/^.\{264\}//')\""
     Withdraw (2 public inputs, skip 136 hex chars): echo "\"0x$(od -An -v -t x1 ./target/proof | tr -d ' \n' | sed 's/^.\{136\}//')\""
+
+6 Bonus: Frontend Implementation (4 points)
+Files: cli.ts
+Setup:
+  cd gen_toml
+  npm install ethers
+  export PRIVATE_KEY="0x..."
+  export RPC_URL="https://ethereum-sepolia-rpc.publicnode.com"
+Usage:
+  npx tsx src/cli.ts sync              - Sync Merkle tree from on-chain events
+  npx tsx src/cli.ts deposit           - Deposit 0.1 ETH
+  npx tsx src/cli.ts withdraw <index>  - Withdraw 0.1 ETH for deposit at <index>
